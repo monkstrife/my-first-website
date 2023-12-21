@@ -1,0 +1,321 @@
+:root {
+    --size_buttun: 200px;
+    --size: 200px;
+    --sizepic: 200pt;
+}
+
+html, body {
+    max-height: calc(var(--size)*3);
+    height: calc(var(--size));
+}
+
+body {
+    background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-attachment: fixed;
+    background-size: 150% 150%;
+    animation: gradient_animation 5s ease infinite;
+
+    padding: calc(0.2*var(--size)) 0px;
+}
+
+img {
+    display: block;
+    position: relative;
+    opacity: 0;
+    left: 15%;
+    top: 15%;
+    width: calc(0.7*var(--sizepic));
+    height: calc(0.7*var(--sizepic));
+}
+
+#text {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    left: 15%;
+    top: 15%;
+    width: calc(0.7*var(--sizepic));
+    height: calc(0.7*var(--sizepic));
+}
+
+@keyframes gradient_animation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+#svgpic {
+    margin: auto;
+    position: absolute;
+    width: var(--sizepic);
+    height: var(--sizepic);
+    background-color: aliceblue;
+    border: calc(0.05*var(--sizepic)) solid;
+}
+
+svg {
+    width: 34.807692307%;
+    height: 49.230769230769%;
+}
+
+#D {
+    position: absolute;
+}
+
+#B {
+    position: absolute;
+    top: 50%;
+    left: 65%;
+}
+
+#demo {
+    position: absolute;
+    display: none;
+}
+
+label {
+    position: absolute;
+    left: 40%;
+    display: block;
+}
+
+
+#rect1 {
+    fill:rgb(217, 255, 0)
+}
+
+#rect2 {
+    fill:rgb(255, 204, 0)
+}
+
+
+@keyframes follow_path {
+    to {
+        offset-distance: 100%;
+    }
+}
+
+@keyframes follow_path2 {
+    to {
+        offset-distance: 100%;
+    }
+}
+
+#svgpic:hover {
+    border-image: conic-gradient(from var(--a), rgb(221, 105, 208), rgb(13, 161, 219), rgb(218, 0, 120), rgb(255, 255, 0), rgb(221, 105, 208)) 1;
+    border-image-slice: 1;
+}
+
+#svgpic:hover #D{
+    animation: DanimX 2s 1 cubic-bezier(0.42, 1, 1, 1) forwards, DanimY 2s 1 cubic-bezier(0.42, -0.5, 1, 1) forwards;
+}
+
+#svgpic:hover  #B{
+    animation: BanimX 2s 1 cubic-bezier(0.42, 1, 1, 1) forwards, BanimY 2s 1 cubic-bezier(0.42, -0.5, 1, 1) forwards;
+}
+
+
+#demo:checked ~ label > div > #D {
+    animation: Damin3D 3s 1 forwards;
+}
+
+#demo:checked ~ label > div > #B {
+    animation: Damin3B 3s 1 forwards;
+}
+
+#demo:checked ~ label > div > img {
+    animation: Damin3img 3s 1 forwards;
+    animation-delay: 1.2s;
+}
+
+#demo:checked ~ label > div > div {
+    animation: Damin3div 3s 1 forwards;
+    animation-delay: 1.2s;
+}
+
+#demo:checked ~ label > #svgpic {
+    /* #ff2770 0%, #ff2770 5%, transparent 5%, transparent 40%, #ff2770 50% */
+    /* rgb(252, 130, 237), rgb(33, 176, 238), rgb(252, 130, 237) */
+    border-image: conic-gradient(from var(--a), rgb(221, 105, 208), rgb(13, 161, 219), rgb(218, 0, 120), rgb(255, 255, 0), rgb(221, 105, 208)) 1;
+    animation: wiggle 3s infinite, borderanim 4s linear infinite;
+}
+
+@property --a {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+/* #demo:checked ~ label > div > #B {
+    animation: BanimX 2s 1 cubic-bezier(0.42, 1, 1, 1) forwards, BanimY 2s 1 cubic-bezier(0.42, -0.5, 1, 1) forwards;
+} */
+
+@keyframes Damin3D {
+    0% {
+        left: 65%;
+        top: 20%;
+        width: calc(var(--sizepic)*0.34807692307);
+        height: calc(var(--sizepic)*0.49230769230769);
+    }
+    60% {
+        left: 58%;
+        top: 20%;
+        width: calc(var(--sizepic)*1.2*0.34807692307);
+        height: calc(var(--sizepic)*1.2*0.49230769230769);
+    }
+    100% {
+        left: 82%;
+        top: 75%;
+        width: calc(var(--sizepic)*0.34807692307*0.5);
+        height: calc(var(--sizepic)*0.49230769230769*0.5);
+    }
+}
+
+@keyframes Damin3B {
+    0% {
+        left: 0%;
+        top: 30%;
+        width: calc(var(--sizepic)*0.34807692307);
+        height: calc(var(--sizepic)*0.49230769230769);
+    }
+    60% {
+        left: 0%;
+        top: 30%;
+        width: calc(var(--sizepic)*1.2*0.34807692307);
+        height: calc(var(--sizepic)*1.2*0.49230769230769);
+    }
+    100% {
+        left: 0%;
+        top: 0%;
+        width: calc(var(--sizepic)*0.34807692307*0.5);
+        height: calc(var(--sizepic)*0.49230769230769*0.5);
+    }
+}
+
+@keyframes Damin3img {
+    0% {
+        opacity: 0;
+        left: 45%;
+        top: 45%;
+        width: calc(0.1*var(--sizepic));
+        height: calc(0.1*var(--sizepic));
+    }
+    100% {
+        opacity: 1;
+        left: 15%;
+        top: 15%;
+        width: calc(0.7*var(--sizepic));
+        height: calc(0.7*var(--sizepic));
+    }
+}
+
+@keyframes Damin3div {
+    0% {
+        opacity: 0;
+        font-size: calc(0.001*var(--sizepic));
+        left: 50%;
+        top: 90%;
+        width: calc(0.7*var(--sizepic));
+        height: calc(0.7*var(--sizepic));
+    }
+    100% {
+        opacity: 1;
+        font-size: calc(0.07*var(--sizepic));
+        left: 29%;
+        top: 82%;
+        width: calc(0.7*var(--sizepic));
+        height: calc(0.7*var(--sizepic));
+    }
+}
+
+@keyframes DanimX {
+    from {
+        left: 0%;
+     }
+     to {
+        left: 65%;
+     }
+ }
+ 
+ @keyframes DanimY {
+    from {
+        top: 0%;
+     }
+     to {
+        top: 20%;
+     }
+ }
+
+ @keyframes BanimX {
+    from {
+        left: 65%;
+     }
+     to {
+        left: 0%;
+     }
+ }
+ 
+ @keyframes BanimY {
+    from {
+        top:50%;
+     }
+     to {
+        top: 30%;
+     }
+ }
+
+ @keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   70% { transform: rotate(0deg); }
+   75% { transform: rotate(5deg); }
+   80% { transform: rotate(-5deg); }
+   85% { transform: rotate(8deg); }
+   90% { transform: rotate(-5deg); }
+   95% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+ @keyframes borderanim {
+    0% {
+        filter: sepia(0%);
+        --a: 0deg;
+    }
+    50% {
+        filter: sepia(100%);
+        --a: 180deg;
+    }
+    100% {
+        filter: sepia(0%);
+        --a: 360deg;
+    }
+ }
+
+ /*Кнопка "назад"*/
+.block_back {
+    position: relative;
+    width: var(--size_buttun);
+    height: var(--size_buttun);
+    border: #00115e calc(var(--size_buttun)*0.01) solid;
+    border-radius: 10.5%;
+    bottom: calc(var(--size)*0.2);
+
+    line-height: calc(var(--size_buttun));
+    text-align: center;
+    font-size: calc(var(--size_buttun)*0.1);
+    font-weight: 700;
+
+    background-color: #cfd3e7;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #00115e;
+    border-radius: 10.5%
+}

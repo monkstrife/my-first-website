@@ -1,0 +1,252 @@
+html, body {
+    height: calc(var(--size));
+}
+
+body {
+    /*background: linear-gradient(45deg, #125c8d, #75d7fb);*/
+    background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-attachment: fixed;
+    background-size: 150% 150%;
+    animation: gradient_animation 5s ease infinite;
+
+    padding: var(--size) 0px;
+}
+
+@keyframes gradient_animation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+:root {
+    --size_buttun: 200px;
+    --size: 200px;
+}
+
+#image {
+    position:relative;
+    margin: auto;
+    bottom: 0px;
+    width: var(--size);
+    height: var(--size);
+    background: none;
+}
+
+#bground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:  radial-gradient(white, #4965E2);
+}
+
+#lmushroom, #rmushroom {
+    position: absolute;
+}
+
+#lmushroom {
+    width: 40%;
+    height: 40%;
+    top: 50%;
+    left: 15%;
+}
+
+#rmushroom {
+    width: 30%;
+    height: 30%;
+    top: 65%;
+    left: 40%;
+    transform: rotate(30deg);
+    z-index:3
+}
+
+#lleg {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #D3CBC9;
+    border-radius: 50%;
+    border: #4E0E14 calc(var(--size)*0.01) solid;
+    z-index: 2;
+}
+
+#lhat {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: radial-gradient(circle closest-side, white, #4E0E14 200%);
+    background-size: 400%;
+    background-position-x: 45%;
+    border-radius: 50% 50% 0 0/80% 80% 0 0;
+    top: -20%;
+    left: -23%;
+    z-index: 3;
+}
+
+#rleg {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #D3CBC9;
+    border-radius: 50%;
+    border: #4E0E14 calc(var(--size)*0.01) solid;
+    z-index: 2;
+}
+
+#rhat {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: radial-gradient(circle closest-side, white, #4E0E14 200%);
+    background-size: 400%;
+    background-position-x: 45%;
+    border-radius: 50% 50% 0 0/80% 80% 0 0;
+    top: -16.7%;
+    left: -22.5%;
+    z-index: 3;
+}
+
+#triangle1, #triangle2, #triangle3, #triangle4 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: calc(var(--size)*0.1665) solid transparent;
+    border-right: calc(var(--size)*0.1665) solid transparent;
+    border-bottom: calc(var(--size)*0.2) solid #00ff1e;
+}
+
+#triangle1 {
+    top: calc(var(--size)*0.75);
+    left: 0;
+    z-index: 4;
+}
+
+#triangle2 {
+    top: calc(var(--size)*0.75);
+    left: calc(var(--size)*0.22215);
+    z-index: 4;
+}
+
+#triangle3 {
+    top: calc(var(--size)*0.75);
+    left: calc(var(--size)*0.4443);
+    z-index: 4;
+}
+
+#triangle4 {
+    top: calc(var(--size)*0.75);
+    left: calc(var(--size)*0.6665);
+    z-index: 4;
+}
+
+#dragonfly {
+    position: absolute;
+    width: 32%;
+    height: 24%;
+    top: calc(var(--size)*0.15);
+    left: calc(var(--size)*0.4);
+    z-index: 3;
+    transform: rotate(-130deg);
+}
+
+#belly {
+    position: absolute;
+    width: 20%;
+    height: 80%;
+    border-radius: 50%;
+    background: #E0B931;
+    border:#000000 calc(var(--size)*0.005) solid;
+    z-index: 4;
+}
+
+#head {
+    position: absolute;
+    top:-10%;
+    width: 20%;
+    height: 25%;
+    border-radius: 50%;
+    background: #E0B931;
+    border:#000000 calc(var(--size)*0.005) solid;
+    z-index: 5;
+}
+
+#leye, #reye {
+    position: absolute;
+    width: 6%;
+    height: 7.5%;
+    border-radius: 50%;
+    background: #000000;
+    z-index: 6;
+}
+
+#leye {
+    top:-2%;
+    left: 13%;
+}
+#reye {
+    top:-2%;
+    left: 3%;
+}
+
+#ltwing, #lbwing, #rtwing, #rbwing {
+    position: absolute;
+    top:-10%;
+    width: 50%;
+    height: 20%;
+    border-radius: 50%;
+    background: #6B83F4;
+    border:#000000 calc(var(--size)*0.005) solid;
+}
+
+#lbwing{
+    top: 50%;
+    transform: rotate(-30deg);
+    left: -40%;
+}
+
+#ltwing{
+    top: 10%;
+    transform: rotate(30deg);
+    left: -40%;
+}
+
+#rbwing{
+    top: 10%;
+    transform: rotate(-30deg);
+    left: 10%;
+}
+
+#rtwing{
+    top: 50%;
+    transform: rotate(30deg);
+    left: 10%;
+}
+
+/*Кнопка "назад"*/
+.block_back {
+    position: relative;
+    width: var(--size_buttun);
+    height: var(--size_buttun);
+    border: #00115e calc(var(--size_buttun)*0.01) solid;
+    border-radius: 10.5%;
+    bottom: calc(var(--size)*2);
+
+    line-height: calc(var(--size_buttun));
+    text-align: center;
+    font-size: calc(var(--size_buttun)*0.1);
+    font-weight: 700;
+
+    background-color: #cfd3e7;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #00115e;
+    border-radius: 10.5%
+}

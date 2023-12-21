@@ -1,0 +1,89 @@
+:root {
+    --size: 400px
+}
+
+html, body {
+    max-height: calc(var(--size)*3);
+    height: calc(var(--size));
+}
+
+body {
+    background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-attachment: fixed;
+    background-size: 150% 150%;
+    animation: gradient_animation 5s ease infinite;
+
+    padding: calc(0.2*var(--size)) 0px;
+}
+
+@keyframes gradient_animation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+#inpval {
+    position: relative;
+    margin: auto;
+    width: calc(var(--size)*0.5);
+    height:  calc(var(--size)*0.3);
+    background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+    border: #4c0054 calc(var(--size)*0.01) solid;
+    border-radius: 30%;
+}
+
+#inp1, #inp2 {
+    line-height: calc(var(--size)*0.15);
+    text-align: center;
+    color:rgb(220, 172, 0);
+    font-size: calc(var(--size)*0.025);
+    font-stretch: calc(var(--size)*0.05);
+}
+
+#inp3 {
+    position: absolute;
+    width: 100%;
+    top: calc(var(--size)*0.35);
+    text-align: center;
+    font-weight: 700;
+}
+
+#res {
+    position: relative;
+    margin: auto;
+    top: calc(var(--size)*0.35);
+    width: calc(var(--size)*0.6);
+    height:  calc(var(--size)*0.6);
+    color: rgb(255, 255, 0);
+    text-align: center;
+}
+
+/*Кнопка "назад"*/
+.block_back {
+    position: relative;
+    width: calc(var(--size)*0.5);
+    height: calc(var(--size)*0.5);
+    border: #00115e calc(var(--size)*0.005) solid;
+    border-radius: 10.5%;
+    bottom: calc(var(--size) + 0.1*var(--size));
+
+    line-height: calc(var(--size)*0.5);
+    text-align: center;
+    font-size: calc(var(--size)*0.05);
+    font-weight: 700;
+
+    background-color: #cfd3e7;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #00115e;
+    border-radius: 10.5%
+}

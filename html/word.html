@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+        <link rel="stylesheet" href="../style/styleword.css">
+	</head>
+
+    <body>
+        <div id="main">
+            <div id="upper_block">
+                <div id="u_subblock">
+                    <ul id = 'word_list2'>
+                        <!-- сюда будут перемещаться слова -->
+                    </ul>
+                </div>
+            </div>
+            <div id="low_blocks">
+                <div id="left_block">
+                    <div id="l_subblock">
+                        <ul id = 'word_list1' class="word_list">
+                            <!-- тут будут добавляться новые слова -->
+                        </ul>
+                    </div>
+                </div>
+                <div id="right_block">
+                    <div id="r_subblock">
+                        <div id="inp_text">
+                            <input id="text1" type="text"></input>
+                        </div>
+                        <div id="question">
+                            <button id="Button1" onclick="func()">Разобрать</button>
+                        </div>
+                        <div id="result"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="block_back">
+            <a href="../index.html">Назад</a>
+        </div>
+
+        <script src="../js/main_word.js"></script>
+    </body>
+</html>
